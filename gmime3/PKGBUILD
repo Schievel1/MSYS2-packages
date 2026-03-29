@@ -1,7 +1,7 @@
 # Maintainer: damon-kwok <damon-kwok@outlook.com>
 
 pkgname=gmime3
-pkgver=3.2.7
+pkgver=3.2.15
 pkgrel=1
 pkgdesc="The GMime package contains a set of utilities for parsing and creating messages using the Multipurpose Internet Mail Extension (MIME) as defined by the applicable RFCs."
 arch=('i686' 'x86_64')
@@ -11,8 +11,8 @@ url="https://github.com/jstedfast/gmime"
 depends=(glib2-devel libiconv-devel zlib-devel libgpg-error-devel)
 makedepends=(gcc gcc-libs make libtool autoconf automake pkg-config gtk-doc)
 provides=(libgmime-3.0.so)
-source=(http://ftp.gnome.org/pub/gnome/sources/gmime/3.2/gmime-${pkgver}.tar.xz)
-sha256sums=('2aea96647a468ba2160a64e17c6dc6afe674ed9ac86070624a3f584c10737d44')
+source=(https://github.com/jstedfast/gmime/releases/download/${pkgver}/gmime-${pkgver}.tar.xz)
+sha256sums=('84cd2a481a27970ec39b5c95f72db026722904a2ccf3fdbd57b280cf2d02b5c4')
 
 # depends=(glib2 gpgme zlib libidn2)
 # makedepends=(gobject-introspection gtk-doc git vala docbook-utils)
@@ -26,7 +26,7 @@ build() {
     cd "gmime-${pkgver}"
     patch -p0 < ../../install.patch
     autoreconf --install -f --verbose
-    ./configure --prefix=/usr --disable-static --enable-shared
+    ./configure --prefix=/usr  --enable-static --disable-shared
     make
 }
 
