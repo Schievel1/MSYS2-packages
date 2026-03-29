@@ -2,7 +2,7 @@
 
 pkgname=xapian-core
 # epoch=1
-pkgver=1.4.21
+pkgver=1.4.26
 pkgrel=1
 pkgdesc='Open source search engine library.'
 arch=('i686' 'x86_64')
@@ -14,7 +14,7 @@ makedepends=(gcc gcc-libs make libtool autoconf automake)
 options=('libtool')
 source=("https://oligarchy.co.uk/xapian/${pkgver}/${pkgname}-${pkgver}.tar.xz")
 #{,.asc})
-sha256sums=('80f86034d2fb55900795481dfae681bfaa10efbe818abad3622cdc0c55e06f88')
+sha256sums=('9e6a7903806966d16ce220b49377c9c8fad667c8f0ffcb23a3442946269363a7')
 # validpgpkeys=('08E2400FF7FE8FEDE3ACB52818147B073BAD2B07') # Olly Betts <olly@debian.org>
 
 build() {
